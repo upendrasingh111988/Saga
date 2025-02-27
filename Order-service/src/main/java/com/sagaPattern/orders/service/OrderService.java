@@ -6,9 +6,10 @@ import com.sagaPattern.orders.entity.PurchaseOrder;
 import com.sagaPattern.orders.repository.OrderRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class OrderService {
 
     @Autowired

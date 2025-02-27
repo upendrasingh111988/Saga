@@ -30,7 +30,7 @@ public class PayementConsumerConfig {
         if (OrderStatus.ORDER_CREATED.equals(orderEvent.getOrderStatus())) {
             return Mono.fromSupplier(()->this.payementService.newOrderEvent(orderEvent));
         }else {
-            return Mono.fromSupplier(()->this.payementService.cancelOrderEvent());
+            return Mono.fromRunnable(()->this.payementService.cancelOrderEvent(orderEvent));
         }
     }
 }
